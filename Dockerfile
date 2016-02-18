@@ -9,7 +9,7 @@ VOLUME /var/lib/mysql
 
 # Install Dependancies
 RUN mkdir /entrypoint && \
-    apk --update add mariadb openssl ca-certificates libssh2 curl && \
+    apk --update add mariadb mysql-client openssl ca-certificates libssh2 curl && \
     curl -L https://github.com/jwilder/dockerize/releases/download/v0.2.0/dockerize-linux-amd64-v0.2.0.tar.gz | \
     tar -xzf - -C /usr/local/bin && \
     apk del openssl ca-certificates libssh2 curl && \
